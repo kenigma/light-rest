@@ -1,0 +1,27 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger Rest Article
+consumes:
+  - application/json
+produces:
+  - application/json
+basePath: "/api"
+
+# Paths supported by the server application
+paths:
+  '/light/{action}':
+    get:
+      operationId: "light.get"
+      #impled operationId: api.light.get
+      parameters:
+        - name: action
+          description: The Action on or off
+          in: path 
+          type: string
+          required: true
+          format: path
+      responses:
+        200:
+          description: successfully trigger the action
